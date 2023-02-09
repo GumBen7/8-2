@@ -7,6 +7,14 @@
              for (var i = 0; i < n; ++i) {
                 a[i] = int.Parse(sArr[i]);
              }
+             Heapsort(a);
+        }
+
+        static void Heapsort(int[] a) {
+            var len = a.Length;
+            for(var i = 0; i < len; ++i) {
+                a[i] = 0;
+            }
         }
     }
 }
