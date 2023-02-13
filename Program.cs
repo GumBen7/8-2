@@ -8,12 +8,29 @@
                 a[i] = int.Parse(sArr[i]);
              }
              Heapsort(a);
+             foreach (var i in a) {
+                Console.Write(i + " ");
+             }
         }
 
         static void Heapsort(int[] a) {
-            var len = a.Length;
-            for(var i = 0; i < len; ++i) {
-                a[i] = 0;
+            var n = a.Length;
+            for (var i = n/2 - 1; i >= 0; --i) Heapify(a, n, i);
+            for (var i = n - 1; i >= 1; --i) {
+                (a[0], a[i]) = (a[i], a[0]);
+                Heapify(a, i, 0);
+            } 
+        }
+
+        static void Heapify(int[] a, int n, int i) {
+            var largest = i;
+            var left = i * 2 + 1;
+            var right = i * 2 + 2;
+            if (left < n && a[left] > a[largest]) largest = left;
+            if (right < n && a[right] > a[largest]) largest = right;
+            if (largest != i) {
+                (a[largest], a[i]) = (a[i], a[largest]);
+                Heapify(a, n, largest);
             }
         }
     }
