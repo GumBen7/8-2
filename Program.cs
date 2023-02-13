@@ -1,15 +1,15 @@
 ﻿namespace EightTwo {
     class Program {
         static void Main(string[] args) {
-             var n = int.Parse(Console.ReadLine());
-             var sArr = Console.ReadLine().Split();
+             var n = int.Parse(System.Console.ReadLine());
+             var sArr = System.Console.ReadLine().Split();
              int[] a = new int[n];
              for (var i = 0; i < n; ++i) {
                 a[i] = int.Parse(sArr[i]);
              }
              Heapsort(a);
              foreach (var i in a) {
-                Console.Write(i + " ");
+                System.Console.Write(i + " ");
              }
         }
 
