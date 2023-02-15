@@ -22,6 +22,16 @@
             } 
         }
 
+        static void Heapify(int[] a, int n) {
+            for (var i = n - 1; i >= 0; --i) {
+
+            }
+        }
+
+        static void Sift(int[] a, int i, int n) {
+            
+        }
+
         static void Heapify(int[] a, int n, int i) {
             var largest = i;
             var left = i * 2 + 1;
